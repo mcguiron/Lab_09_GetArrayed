@@ -63,5 +63,40 @@ public class Main {
         if (!done) {
             System.out.println("The value " + search + " was not found in the array.");
         }
+
+        // Initialize minVal with the first item price
+        double minVal = dataPoints[0];
+        double maxVal = dataPoints[0];
+
+
+        for (int x = 1; x < dataPoints.length; x++) {
+            if (dataPoints[x] > maxVal) {
+                maxVal = dataPoints[x];
+
+            }
+            if (dataPoints[x] < minVal) {
+                minVal = dataPoints[x];
+
+            }
+        }
+
+        System.out.println("Min value is " + minVal);
+        System.out.println("Max value is " + maxVal);
+
+
+        System.out.println("Average of dataPoints is: " + getAverage(dataPoints));
     }
+
+    public static double getAverage(int values[])
+    {
+        int sum = 0;
+
+        for (int x = 0; x < values.length; x++) {
+            sum += values[x];
+        }
+
+        return sum / (double) values.length;
+    }
+
 }
+
